@@ -77,15 +77,23 @@ class DroneAnalyzerGUI(ctk.CTk):
 
         axes[0, 0].plot(self.flight_data["Czas lotu [s]"], self.flight_data["Wysokość [m]"], color="#00aaff")  # Flight Time [s], Altitude [m]
         axes[0, 0].set_title("Drone Altitude")
+        axes[0, 0].set_xlabel("Flight Time [s]")
+        axes[0, 0].set_ylabel("Altitude [m]")
 
         axes[0, 1].plot(self.flight_data["Czas lotu [s]"], self.flight_data["Prędkość [m/s]"], color="#c3ca39") # Flight Time [s], Speed [m/s]
         axes[0, 1].set_title("Drone Speed")
+        axes[0, 1].set_xlabel("Flight Time [s]")
+        axes[0, 1].set_ylabel("Speed [m/s]")
 
         axes[1, 0].plot(self.flight_data["Czas lotu [s]"], self.flight_data["Poziom baterii [%]"], color="#159f25") # Flight Time [s], Battery Level [%]
         axes[1, 0].set_title("Drone Battery Level")
+        axes[1, 0].set_xlabel("Flight Time [s]")
+        axes[1, 0].set_ylabel("Battery Level [%]")
 
         axes[1, 1].plot(self.flight_data["Czas lotu [s]"], self.flight_data["Temperatura [°C]"], color="#a50a0a") # Flight Time [s], Temperature [°C]
         axes[1, 1].set_title("Drone Temperature")
+        axes[1, 1].set_xlabel("Flight Time [s]")
+        axes[1, 1].set_ylabel("Temperature [°C]")
 
         plt.tight_layout()
         
@@ -153,7 +161,7 @@ class DroneAnalyzerGUI(ctk.CTk):
 
 
     def clear_main_panel(self):
-        # This lets you to clear the right panel before displaying something new
+        # This lets you to clear the main panel before displaying something new
         for widget in self.main_panel.winfo_children():
             widget.destroy()
     
